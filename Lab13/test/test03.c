@@ -26,7 +26,8 @@ void inputStudent(struct Student pstds[MAX_STD_NUM], int i) {
 }
 
 void search(int search_id,struct Student pstds[MAX_STD_NUM],int n) {
-  for (int i = 0; i < n; i++) {
+  int i;
+  for (i = 0; i < n; i++) {
     if (pstds[i].id == search_id) {
       printf("--------- No. %d ---------\n", pstds[i].no);
       printf("Student ID : %d\n", pstds[i].id);
@@ -37,17 +38,17 @@ void search(int search_id,struct Student pstds[MAX_STD_NUM],int n) {
 }
 
 int main() {
-  int N;
+  int N, i;
   int search_id;
   char cont = 'n';
   printf("Enter the number of students : ");
   scanf("%d", &N);
   struct Student std[N];
-  for (int i = 0; i < N; i++) {
+  for (i = 0; i < N; i++) {
     inputStudent(std, i);
   }
   printf("======== Students ========\n");
-  for (int i = 0; i < N; i++) {
+  for (i = 0; i < N; i++) {
     printStudent(std[i]);
   }
 

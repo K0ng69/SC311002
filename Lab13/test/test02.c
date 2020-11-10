@@ -16,8 +16,8 @@ void printStudent(struct Student std) {
 }
 
 void inputStudent(struct Student pstds[MAX_STD_NUM], int i) {
-  pstds[i].no = i;
-  printf("No. %d\tStudent ID : ", i);
+  pstds[i].no = i+1;
+  printf("No. %d\tStudent ID : ", i+1);
   scanf("%d", &pstds[i].id);
   printf("\tName : ");
   scanf("%s", &pstds[i].name);
@@ -26,15 +26,15 @@ void inputStudent(struct Student pstds[MAX_STD_NUM], int i) {
 }
 
 int main() {
-  int N;
+  int N, i;
   printf("Enter the number of students : ");
   scanf("%d", &N);
   struct Student std[N];
-  for (int i = 0; i < N; i++) {
+  for (i = 0; i < N; i++) {
     inputStudent(std, i);
   }
   printf("======== Students ========\n");
-  for (int i = 0; i < N; i++) {
+  for (i = 0; i < N; i++) {
     printStudent(std[i]);
   }
 }
