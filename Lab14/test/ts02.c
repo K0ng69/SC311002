@@ -33,7 +33,7 @@ int main() {
   FILE *fp = fopen(filename, "r");
 
   if (fp == NULL) {
-    printf("\nError : Cannot open file.");
+    printf("\nError :  %s does not exist", filename);
     exit(-1);
   }
 
@@ -46,7 +46,7 @@ int main() {
   printf(" Student ID\tName\t\tScore\tGrade\n");
   printf("------------------------------------------------\n");
   while (fscanf(fp, "%d %s %s %d", &id, fname, lname, &score) != EOF) {
-    printf("%11d \t%s %s\t\t%5d\t  %c\n", id, fname, lname, score, grade(score));
+    printf("%11d \t%s %s %5d\t  %c\n", id, fname, lname, score, grade(score));
   }
 
   fclose(fp);
