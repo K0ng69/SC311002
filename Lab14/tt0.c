@@ -41,7 +41,7 @@ int main()
     }
 
     for(i=0;i<numstudent;i++){
-        fprintf(fp, "%d %s %s %d\n", AllStudent[i].id, AllStudent[i].firstName, AllStudent[i].lastName, AllStudent[i].score);
+    fprintf(fp, "%d %s %s %d\n", AllStudent[i].id, AllStudent[i].firstName, AllStudent[i].lastName, AllStudent[i].score);
     }
 
     return 0;
