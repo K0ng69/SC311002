@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char grade(int score) {
   char g;
@@ -40,13 +41,15 @@ int main() {
   int id = 0;
   char fname[20];
   char lname[20];
+  // char fullname[40];
   int score = 0;
 
   printf("------------------------------------------------\n");
   printf(" Student ID\tName\t\tScore\tGrade\n");
   printf("------------------------------------------------\n");
   while (fscanf(fp, "%d %s %s %d", &id, fname, lname, &score) != EOF) {
-    printf("%11d \t%s %s %5d\t  %c\n", id, fname, lname, score, grade(score));
+    strcat(strcat(fname, " "), lname);
+    printf("%11d \t%15s %5d\t  %c\n", id, fname, score, grade(score));
   }
 
   fclose(fp);

@@ -16,8 +16,8 @@ void printStudent(struct Student std) {
 }
 
 void inputStudent(struct Student pstds[MAX_STD_NUM], int i) {
-  pstds[i].no = i;
-  printf("No. %d\tStudent ID : ", i);
+  pstds[i].no = i+1;
+  printf("No. %d\tStudent ID : ", i+1);
   scanf("%d", &pstds[i].id);
   printf("\tName : ");
   scanf("%s", &pstds[i].name);
@@ -25,7 +25,7 @@ void inputStudent(struct Student pstds[MAX_STD_NUM], int i) {
   scanf("%d", &pstds[i].score);
 }
 
-void search(int search_id,struct Student pstds[MAX_STD_NUM],int n) {
+void search(int search_id, struct Student pstds[MAX_STD_NUM], int n) {
   int i;
   for (i = 0; i < n; i++) {
     if (pstds[i].id == search_id) {
@@ -33,6 +33,9 @@ void search(int search_id,struct Student pstds[MAX_STD_NUM],int n) {
       printf("Student ID : %d\n", pstds[i].id);
       printf("Name       : %s\n", pstds[i].name);
       printf("Score      : %d\n", pstds[i].score);
+    }
+    else {
+      printf("\n!!! Student not found !!!\n");
     }
   }
 }
