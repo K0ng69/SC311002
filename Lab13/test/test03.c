@@ -28,15 +28,20 @@ void inputStudent(struct Student pstds[MAX_STD_NUM], int i) {
 void search(int search_id, struct Student pstds[MAX_STD_NUM], int n) {
   int i;
   for (i = 0; i < n; i++) {
+    // printf("%d %d", pstds[i].id, search_id);
     if (pstds[i].id == search_id) {
+      printf("*** Found student ***\n");
       printf("--------- No. %d ---------\n", pstds[i].no);
       printf("Student ID : %d\n", pstds[i].id);
       printf("Name       : %s\n", pstds[i].name);
       printf("Score      : %d\n", pstds[i].score);
+      i = -1;
+      break;
     }
-    else {
-      printf("\n!!! Student not found !!!\n");
+
     }
+  if (i != -1) {
+    printf("\n!!! Student not found !!!\n\n");
   }
 }
 

@@ -44,12 +44,12 @@ int main() {
   // char fullname[40];
   int score = 0;
 
-  printf("------------------------------------------------\n");
-  printf(" Student ID\tName\t\tScore\tGrade\n");
-  printf("------------------------------------------------\n");
+  // printf("------------------------------------------------\n");
+  printf("\n Student ID\tName\t\tScore\tGrade\n\n");
+  // printf("------------------------------------------------\n");
   while (fscanf(fp, "%d %s %s %d", &id, fname, lname, &score) != EOF) {
-    strcat(strcat(fname, " "), lname);
-    printf("%11d \t%15s %5d\t  %c\n", id, fname, score, grade(score));
+    // strcat(strcat(fname, " "), lname);
+    printf("%11d \t%s %s %5d\t  %c\n", id, fname, lname, score, grade(score));
   }
 
   fclose(fp);
